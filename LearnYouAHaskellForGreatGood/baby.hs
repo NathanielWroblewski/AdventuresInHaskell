@@ -67,3 +67,21 @@ showCycle num list = take num (cycle list)
 
 repeatTenFiveTimes = take 10 (repeat 5)
 repeatTenFiveTimes' = replicate 5 10
+
+firstTenEvenNumbers = take 10 [2,4..]
+
+powersOfTwoListComprehension = [2^x|x<-[1..10]]
+
+withAPredicate = [2^x|x<-[1..10], x*2>=12]
+
+[ x | x <- [50..100], x `mod` 7 == 3]
+
+[ x | x <- [10..20], x /= 13, x /= 15, x /= 19]
+
+length' xs = sum [1 | _ <- xs]
+
+-- Which right triangle that has integers for all sides and all sides equal to
+-- or smaller than 10 has a perimeter of 24?
+triangles = [(a,b,c) | c<-[1..10],b<-[1..c],a<-[1..b], a^2+b^2==c^2, a+b+c==24 ]
+
+
